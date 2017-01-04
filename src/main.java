@@ -1,8 +1,10 @@
+package finalterm;
 import java.util.*;
-
 import javax.swing.JTextArea;
+//import hw.MainFrames.Act;
 import java.awt.event.*;
 import java.awt.*;
+
 public class main {
 
 	public static void main(String[] args) {
@@ -12,6 +14,7 @@ public class main {
 	}
 }
 		class MainFrame extends Frame{
+			private static final Object[] R = null;
 			int a = 0;
 		private Label lab=new Label("0");
 		private Button b0=new Button("Random");
@@ -66,7 +69,8 @@ public class main {
 		private Button a7=new Button("4");
 		private Button a8=new Button("3");
 		private Button a9=new Button("2");
-		private Button a10=new Button("1");
+		private Button a10=new Button("1"); 
+		private Button Q1=new Button("Clear");
         private TextArea ta=new TextArea();	
 public MainFrame(){
 	 initComp();
@@ -74,7 +78,7 @@ public MainFrame(){
 private void initComp(){
     this.setLayout(null);
 	this.setBackground(Color.black);
-	this.setBounds(150,100,1200,800);
+	this.setBounds(150,150,1200,800);
 	this.setFont(new Font("º–∑¢≈È", Font.BOLD, 32));
 	this.addWindowListener(new WindowAdapter(){
 		public void windowClosing(WindowEvent we){
@@ -134,7 +138,7 @@ a1.setBounds(910,300,100,70);
  a8.setBounds(1050,460,100,70);
  a9.setBounds(1050,540,100,70);
  a10.setBounds(1050,620,100,70);
- 
+ Q1.setBounds(910,220,240,70);
  this.add(b0);
  this.add(b1);
  this.add(b2);
@@ -188,10 +192,8 @@ a1.setBounds(910,300,100,70);
  this.add(a8);
  this.add(a9);
  this.add(a10); 
-// lab.setBounds(440,90,700,100);
-// lab.setBackground(Color.white);
-// this.add(lab);
  this.add(ta);
+ this.add(Q1);
  ta.setBounds(440,90,700,100);
  
  b1.addActionListener(new ActionListener(){
@@ -457,6 +459,10 @@ a1.setBounds(910,300,100,70);
     	 ta.append("1");
      }
      });
- 
+ Q1.addActionListener(new ActionListener(){
+     public void actionPerformed(ActionEvent ae){
+    	 ta.setText("");
+     }
+     });
 }
 }
